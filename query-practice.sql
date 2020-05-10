@@ -34,6 +34,11 @@ SELECT a.Title, s.Title FROM Album a LEFT JOIN Song s ON s.AlbumId = a.AlbumId;
 SELECT a.Title, s.Title FROM Song s LEFT JOIN Album a ON s.AlbumId = a.AlbumId;
 
 -- Write a SELECT statement to display how many songs exist for each album. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
+SELECT al.Title, COUNT() as SongCount
+FROM Album al
+JOIN Song s
+ON al.AlbumId = s.AlbumId 
+GROUP BY al.Title;
 
 -- Write a SELECT statement to display how many songs exist for each artist. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
 
