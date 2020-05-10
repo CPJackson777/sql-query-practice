@@ -20,14 +20,13 @@ INSERT INTO Song
 VALUES (null, "Stay Up", "185", "2/14/2012", 13, 30, 23);
 
 -- Write a SELECT query that provides the song titles, album title, and artist name for all of the data you just entered in. Use the LEFT JOIN keyword sequence to connect the tables, and the WHERE keyword to filter the results to the album and artist you added.
-SELECT s.Title as "Song Title", al.Title as "Album Title", ar.ArtistName as "Artist Name"
+SELECT s.Title as SongTitle, al.Title as AlbumTitle, ar.ArtistName
 FROM Song s
-JOIN Album al, Artist ar
+LEFT JOIN Album al
 ON s.AlbumId = al.AlbumId
-AND s.ArtistId = ar.ArtistId
-WHERE s.ArtistId = 30
-GROUP BY s.Title
-ORDER BY s.Title DESC;
+LEFT JOIN Artist ar
+ON s.ArtistId = ar.ArtistId
+WHERE ar.ArtistName = Cholly P;
 
 -- Reminder: Direction of join matters. Try the following statements and see the difference in results.
 
