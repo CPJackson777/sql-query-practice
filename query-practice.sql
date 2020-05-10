@@ -41,6 +41,11 @@ ON al.AlbumId = s.AlbumId
 GROUP BY al.Title;
 
 -- Write a SELECT statement to display how many songs exist for each artist. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
+SELECT ar.ArtistName, COUNT() as SongCount
+FROM Artist ar 
+JOIN Song s
+ON ar.ArtistId = s.ArtistId
+GROUP BY ar.ArtistName;
 
 -- Write a SELECT statement to display how many songs exist for each genre. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
 
