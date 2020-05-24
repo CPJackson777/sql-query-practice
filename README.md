@@ -1,0 +1,1 @@
+Original queries are being written in TablePlus. I am simply using VS Code as a backup record.
