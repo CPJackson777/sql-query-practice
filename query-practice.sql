@@ -63,3 +63,7 @@ SELECT s.Title, MAX(s.SongLength) as MaxDuration
 FROM Song s
 
 -- Modify the previous query to also display the title of the album.
+SELECT s.Title, MAX(s.SongLength) as MaxDuration, al.Title
+FROM Song s
+JOIN Album al
+ON s.AlbumId = al.AlbumId;
