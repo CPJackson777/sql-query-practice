@@ -74,3 +74,9 @@ ON s.AlbumId = al.AlbumId;
 SELECT FirstName, LastName, Customerid, Country
 FROM Customer
 WHERE Country != 'USA';
+
+-- brazil_customers.sql: Provide a query only showing the Customers from Brazil.
+
+SELECT FirstName, LastName, Customerid, Country
+FROM Customer
+WHERE Country == 'Brazil';
