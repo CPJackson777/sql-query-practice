@@ -67,3 +67,5 @@ SELECT s.Title, MAX(s.SongLength) as MaxDuration, al.Title
 FROM Song s
 JOIN Album al
 ON s.AlbumId = al.AlbumId;
+
+-- Starting Chinook exercise
