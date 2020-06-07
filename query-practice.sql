@@ -67,3 +67,24 @@ SELECT s.Title, MAX(s.SongLength) as MaxDuration, al.Title
 FROM Song s
 JOIN Album al
 ON s.AlbumId = al.AlbumId;
+
+-- Starting Chinook exercise
+
+-- non_usa_customers.sql: Provide a query showing Customers (just their full names, customer ID and country) who are not in the US.
+SELECT FirstName, LastName, Customerid, Country
+FROM Customer
+WHERE Country != 'USA';
+
+-- brazil_customers.sql: Provide a query only showing the Customers from Brazil.
+
+SELECT FirstName, LastName, Customerid, Country
+FROM Customer
+WHERE Country == 'Brazil';
+
+-- brazil_customers_invoices.sql: Provide a query showing the Invoices of customers who are from Brazil. The resultant table should show the customer's full name, Invoice ID, Date of the invoice and billing country.
+
+SELECT c.FirstName, c.LastName, i.InvoiceId, i.BillingCountry, i.InvoiceDate
+FROM Invoice i 
+JOIN Customer c
+ON c.CustomerId == i.CustomerId
+WHERE c.Country == 'Brazil';
