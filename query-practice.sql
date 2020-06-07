@@ -86,3 +86,5 @@ WHERE Country == 'Brazil';
 SELECT c.FirstName, c.LastName, i.InvoiceId, i.BillingCountry, i.InvoiceDate
 FROM Invoice i 
 JOIN Customer c
+ON c.CustomerId == i.CustomerId
+WHERE c.Country == 'Brazil';
