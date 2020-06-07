@@ -69,3 +69,8 @@ JOIN Album al
 ON s.AlbumId = al.AlbumId;
 
 -- Starting Chinook exercise
+
+-- non_usa_customers.sql: Provide a query showing Customers (just their full names, customer ID and country) who are not in the US.
+SELECT FirstName, LastName, Customerid, Country
+FROM Customer
+WHERE Country != 'USA';
