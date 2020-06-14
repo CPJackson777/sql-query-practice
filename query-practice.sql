@@ -98,3 +98,18 @@ WHERE TITLE == 'Sales Support Agent';
 
 SELECT * FROM Invoice 
 ORDER BY BillingCountry;
+
+-- sales_agent_invoices.sql: Provide a query that shows the invoices associated with each sales agent. The resultant table should include the Sales Agent's full name.
+
+SELECT 
+i.InvoiceDate, 
+i.Total,
+i.BillingAddress,
+i.BillingCountry,
+i.BillingCity,
+i.BillingState,
+i.BillingPostalCode,
+e.FirstName,
+e.LastName
+FROM Invoice i
+JOIN Customer c
