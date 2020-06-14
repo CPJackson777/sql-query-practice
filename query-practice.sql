@@ -88,3 +88,8 @@ FROM Invoice i
 JOIN Customer c
 ON c.CustomerId == i.CustomerId
 WHERE c.Country == 'Brazil';
+
+-- sales_agents.sql: Provide a query showing only the Employees who are Sales Agents.
+
+SELECT * FROM Employee
+WHERE TITLE == 'Sales Support Agent';
