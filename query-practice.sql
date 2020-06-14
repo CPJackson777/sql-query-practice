@@ -88,3 +88,32 @@ FROM Invoice i
 JOIN Customer c
 ON c.CustomerId == i.CustomerId
 WHERE c.Country == 'Brazil';
+
+-- sales_agents.sql: Provide a query showing only the Employees who are Sales Agents.
+
+SELECT * FROM Employee
+WHERE TITLE == 'Sales Support Agent';
+
+-- unique_invoice_countries.sql: Provide a query showing a unique/distinct list of billing countries from the Invoice table.
+
+SELECT * FROM Invoice 
+ORDER BY BillingCountry;
+
+-- sales_agent_invoices.sql: Provide a query that shows the invoices associated with each sales agent. The resultant table should include the Sales Agent's full name.
+
+SELECT 
+i.InvoiceDate, 
+i.Total,
+i.BillingAddress,
+i.BillingCountry,
+i.BillingCity,
+i.BillingState,
+i.BillingPostalCode,
+e.FirstName,
+e.LastName
+FROM Invoice i
+JOIN Customer c
+ON i.CustomerId == c.CustomerId
+JOIN Employee e 
+ON c.SupportRepId == e.EmployeeId
+ORDER BY e.EmployeeId;
