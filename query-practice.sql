@@ -117,3 +117,28 @@ ON i.CustomerId == c.CustomerId
 JOIN Employee e 
 ON c.SupportRepId == e.EmployeeId
 ORDER BY e.EmployeeId;
+
+-- total_invoices_{year}.sql: How many Invoices were there in 2009 and 2011?
+
+SELECT strftime('%Y', InvoiceDate) as 'year',
+COUNT(*)
+FROM Invoice
+WHERE year IN ('2009', '2011') 
+GROUP BY year;
+
+-- total_sales_{year}.sql: What are the respective total sales for each of those years?
+
+SELECT strftime('%Y', InvoiceDate) as 'year', 
+SUM(Total) as 'yearly total'
+FROM Invoice
+WHERE year IN ('2009', '2011') 
+GROUP BY year;
+
+-- invoice_37_line_item_count.sql: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
+
+SELECT *,
+COUNT(i.InvoiceId) as 'Invoice 37'
+FROM InvoiceLine as il
+JOIN Invoice as i
+ON il.InvoiceId == i.InvoiceId
+WHERE i.InvoiceId == '37';
