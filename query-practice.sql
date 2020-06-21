@@ -135,3 +135,10 @@ WHERE year IN ('2009', '2011')
 GROUP BY year;
 
 -- invoice_37_line_item_count.sql: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for Invoice ID 37.
+
+SELECT *,
+COUNT(i.InvoiceId) as 'Invoice 37'
+FROM InvoiceLine as il
+JOIN Invoice as i
+ON il.InvoiceId == i.InvoiceId
+WHERE i.InvoiceId == '37';
