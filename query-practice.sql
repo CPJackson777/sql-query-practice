@@ -117,3 +117,9 @@ ON i.CustomerId == c.CustomerId
 JOIN Employee e 
 ON c.SupportRepId == e.EmployeeId
 ORDER BY e.EmployeeId;
+
+-- total_invoices_{year}.sql: How many Invoices were there in 2009 and 2011?
+
+SELECT strftime('%Y', InvoiceDate) as 'year',
+COUNT(*)
+FROM Invoice
