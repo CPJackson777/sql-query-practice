@@ -123,3 +123,5 @@ ORDER BY e.EmployeeId;
 SELECT strftime('%Y', InvoiceDate) as 'year',
 COUNT(*)
 FROM Invoice
+WHERE year IN ('2009', '2011') 
+GROUP BY year;
