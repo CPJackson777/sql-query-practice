@@ -125,3 +125,11 @@ COUNT(*)
 FROM Invoice
 WHERE year IN ('2009', '2011') 
 GROUP BY year;
+
+-- total_sales_{year}.sql: What are the respective total sales for each of those years?
+
+SELECT strftime('%Y', InvoiceDate) as 'year', 
+SUM(Total) as 'yearly total'
+FROM Invoice
+WHERE year IN ('2009', '2011') 
+GROUP BY year;
