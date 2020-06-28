@@ -149,3 +149,10 @@ SELECT *,
 COUNT(InvoiceId) as 'TotalLineItems'
 FROM InvoiceLine
 GROUP BY InvoiceId;
+
+- line_item_track.sql: Provide a query that includes the purchased track name with each invoice line item.
+
+SELECT *
+FROM InvoiceLine as il
+JOIN Track as t
+ON il.TrackId == t.TrackId;
