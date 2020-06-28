@@ -142,3 +142,17 @@ FROM InvoiceLine as il
 JOIN Invoice as i
 ON il.InvoiceId == i.InvoiceId
 WHERE i.InvoiceId == '37';
+
+-- line_items_per_invoice.sql: Looking at the InvoiceLine table, provide a query that COUNTs the number of line items for each Invoice. HINT: GROUP BY
+
+SELECT *,
+COUNT(InvoiceId) as 'TotalLineItems'
+FROM InvoiceLine
+GROUP BY InvoiceId;
+
+- line_item_track.sql: Provide a query that includes the purchased track name with each invoice line item.
+
+SELECT *
+FROM InvoiceLine as il
+JOIN Track as t
+ON il.TrackId == t.TrackId;
