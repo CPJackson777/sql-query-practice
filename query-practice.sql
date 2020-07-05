@@ -164,3 +164,5 @@ JOIN Track as t
 ON il.TrackId == t.TrackId
 JOIN Album as al
 ON al.AlbumId == t.AlbumId
+JOIN Artist as a
+ON a.ArtistId == al.ArtistId;
